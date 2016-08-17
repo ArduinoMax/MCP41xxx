@@ -23,6 +23,11 @@ void MCP41xxx::begin(void)
     pinMode(_ss, OUTPUT);
 }
 
+void MCP41xxx::analogWrite(uint16_t value)
+{
+	analogWrite(0, value);
+}
+
 void MCP41xxx::analogWrite(uint8_t gate, uint16_t value)
 {
 

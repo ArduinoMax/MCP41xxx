@@ -31,13 +31,22 @@ public:
      */
     void begin(void);
     
+	/*!
+	 Write a value to the DAC chip.
+
+	 @param value The DAC value. It is capped to 10 bits and excessive bits are
+	 ignored.
+	 */
+	void analogWrite(uint16_t value);
+
     /*!
      Write a value to the DAC chip.
      
+	 @param gate  The ID of the DAC.
      @param value The DAC value. It is capped to 10 bits and excessive bits are
      ignored.
      */
-    void analogWrite(uint8_t gate = 0, uint16_t value);
+    void analogWrite(uint8_t gate, uint16_t value);
 };
 
 #endif // !defined(_TLC5615_H_)

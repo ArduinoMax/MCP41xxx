@@ -7,14 +7,15 @@ Created & maintained by Max Chan.
 This driver interfaces the microcontroller with the Microchip MCP41xxx/42xxx
 digital potentiometers and MCP43xxx/44xxx digital rheostats.
 
-## Device numbering
+## Device addressing
 
 This driver supports a daisy-chained string of digi-pots sharing a single chip
 select line. Device 0 is the first pot on the chip closest to the MCU. Only
 MCP42xxx and MCP44xxx can daisy chain, but MCP41xxx and MCP43xxx can be at the
 end of a chain.
 
-When using a lone MCP41xxx/43xxx digi-pot, address device 0.
+When using a lone MCP41xxx/43xxx digi-pot, you can call `analogWrite` without
+the device address.
 
 ## Shutdown Mode
 
