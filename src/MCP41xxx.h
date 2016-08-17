@@ -10,7 +10,9 @@
 
 #include <Arduino.h>
 
-#define ADC_SHUTDOWN UINT16_MAX
+#ifndef DAC_SHUTDOWN
+#define DAC_SHUTDOWN UINT16_MAX
+#endif
 
 /// Driver for Microchip MCP41xxx digi-pot.
 class MCP41xxx

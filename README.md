@@ -20,7 +20,7 @@ the device address.
 ## Shutdown Mode
 
 Those digi-pots can enter shut down mode. To enter this mode, write
-`ADC_SHUTDOWN` into the pot. Writing any other value will take the gate out of
+`DAC_SHUTDOWN` into the pot. Writing any other value will take the gate out of
 shutdown mode as long as it is not inhibited by the hardware shutdown line on
 MCP42xxx/44xxx.
 
