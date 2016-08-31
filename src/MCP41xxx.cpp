@@ -32,7 +32,7 @@ void MCP41xxx::analogWrite(uint8_t gate, uint16_t value)
 {
 
 	// Prepare SPI data;
-	if (value == ADC_SHUTDOWN)
+	if (value == DAC_SHUTDOWN)
 	{
 		value = 0x2000;
 	}
