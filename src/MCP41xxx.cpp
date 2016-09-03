@@ -49,14 +49,15 @@ void MCP41xxx::analogWrite(uint8_t gate, uint16_t value)
     
     // Perform SPI Transfer
     SPI.beginTransaction(SPISettings(10000000, MSBFIRST, SPI_MODE0));
-
+	
+	SPI.transfer16(value);
+	
 	uint8_t zeros = gate >> 1;
 	for (uint8_t idx = 0; idx < zeros; idx++)
 	{
 		// Send zeros to bypass irelevant chips
 		SPI.transfer16(0);
 	}
-	SPI.transfer16(value);
 
     SPI.endTransaction();
     
